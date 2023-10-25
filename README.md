@@ -1,13 +1,13 @@
-# Webify
+# WebifyPy
 
-Webify is a Python module for generating HTML forms and components. It provides a set of classes to easily create various HTML elements commonly used in web development.
+WebifyPy is a Python module for generating HTML forms and components. It provides a set of classes to easily create various HTML elements commonly used in web development.
 
 ## Installation
 
-You can install Webify using pip:
+You can install WebifyPy using pip:
 
 ```bash
-pip install webify
+pip install WebifyPy
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ pip install webify
 ### Using Forms
 
 ```python
-from webify.forms import Form, InputField, SubmitButton
+from WebifyPy.forms import Form, InputField, SubmitButton
 
 # Create a form
 form = Form(action="/submit", method="POST")
@@ -36,12 +36,12 @@ form_html = form.render()
 ### Using Components
 
 ```python
-from webify.components import Div, Header, Paragraph
+from WebifyPy.components import Div, Header, Paragraph
 
 # Create a div with a header and a paragraph
 content = Div(
-    content=Header(level=2, text="Welcome to Webify!") +
-             Paragraph(content="Webify is a Python module for generating HTML forms and components.")
+    content=Header(level=2, text="Welcome to WebifyPy!") +
+             Paragraph(content="WebifyPy is a Python module for generating HTML forms and components.")
 )
 
 # Render the content
@@ -111,7 +111,8 @@ content_html = content.render()
 | RadioGroup      | Renders a group of radio buttons with specified attributes.          |
 
 
-**Repository Views** ![Views](https://profile-counter.glitch.me/webify/count.svg)
+**Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
+
 
 
 ## License
