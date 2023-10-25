@@ -4,14 +4,14 @@ with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(
-    name='webify',
+    name='WebifyPy',
     version='0.1.0',
     author='Ishan Oshada',
     author_email='ic31908@gmail.com',
     description='A Python package for web development',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/ishanoshada/webify',
+    url='https://github.com/ishanoshada/WebifyPy',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -26,8 +26,8 @@ setup(
         'Operating System :: OS Independent',
     ],
     project_urls={
-        'Bug Reports': 'https://github.com/ishanoshada/webify/issues',
-        'Source': 'https://github.com/ishan oshada/webify',
+        'Bug Reports': 'https://github.com/ishanoshada/WebifyPy/issues',
+        'Source': 'https://github.com/ishan oshada/WebifyPy',
     },
     keywords='web development, Python package ',
     license='MIT',
