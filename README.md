@@ -111,6 +111,9 @@ content_html = content.render()
 | RadioGroup      | Renders a group of radio buttons with specified attributes.          |
 
 
+**Repository Views** ![Views](https://profile-counter.glitch.me/webify/count.svg)
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
