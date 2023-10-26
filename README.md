@@ -48,6 +48,81 @@ content = Div(
 content_html = content.render()
 ```
 
+
+### Creating a Dropdown Menu
+
+```python
+from WebifyPy.components import Dropdown
+
+# Define options for the dropdown
+options = ["Option 1", "Option 2", "Option 3"]
+
+# Create a dropdown
+dropdown = Dropdown(options=options)
+
+# Render the dropdown
+dropdown_html = dropdown.render()
+```
+
+### Building a Contact Form
+
+```python
+from WebifyPy.forms import Form, InputField, TextArea, SubmitButton
+
+# Create a contact form
+contact_form = Form(action="/contact_submit", method="POST")
+
+# Add fields to the form
+name_field = InputField(name="name", type="text", label="Name")
+email_field = InputField(name="email", type="email", label="Email")
+message_field = TextArea(name="message", rows=5, cols=30, label="Message")
+submit_button = SubmitButton(label="Send Message")
+
+contact_form.add_field(name_field)
+contact_form.add_field(email_field)
+contact_form.add_field(message_field)
+contact_form.add_field(submit_button)
+
+# Render the form
+contact_form_html = contact_form.render()
+```
+
+### Creating a List of Products
+
+```python
+from WebifyPy.components import List
+
+# Define a list of products
+products = ["Product 1", "Product 2", "Product 3"]
+
+# Create a list component
+product_list = List(items=products)
+
+# Render the list
+product_list_html = product_list.render()
+```
+
+### Making a Table of User Data
+
+```python
+from WebifyPy.components import Table
+
+# Define headers and rows for the table
+headers = ["Name", "Email", "Role"]
+rows = [
+    ["John Doe", "john@example.com", "Admin"],
+    ["Jane Smith", "jane@example.com", "User"],
+    ["Jim Brown", "jim@example.com", "User"]
+]
+
+# Create a table component
+user_table = Table(headers=headers, rows=rows)
+
+# Render the table
+user_table_html = user_table.render()
+```
+
+
 ## Classes Reference
 
 
