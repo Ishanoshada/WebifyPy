@@ -231,3 +231,11 @@ class Footer:
     def render(self):
         return f'<footer>{self.content}</footer>'
    
+   
+
+ 
+ 
+ 
+        
+               
+                             
