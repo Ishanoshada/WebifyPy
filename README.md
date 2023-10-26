@@ -239,8 +239,7 @@ css_styles.apply(button_component)
 | StyledBadge        | Renders a styled badge with custom text.                             |
 
 
-
-### js_components.py
+### js_components
 
 
 | Class Name                | Description                              |
@@ -270,7 +269,6 @@ css_styles.apply(button_component)
 | ProgressBarComponent      | Renders a progress bar with specified maximum value. |
 
 
-```       
 
 ### styling 
 
@@ -284,6 +282,7 @@ css_styles.apply(button_component)
 | `Less`          | Represents Less code to be applied to a component.           |
 | `TailwindCSS`   | Represents Tailwind CSS classes to be applied.              |
 | `Bootstrap`     | Represents a specific version of Bootstrap to be used.     |
+
 
 
 
