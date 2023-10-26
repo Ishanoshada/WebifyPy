@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='WebifyPy',
-    version='0.2.0',
+    version='0.3.0',
     author='Ishan Oshada',
     author_email='ic31908@gmail.com',
     description='A Python package for web development',
