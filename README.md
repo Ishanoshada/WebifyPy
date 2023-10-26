@@ -161,7 +161,6 @@ toggle_switch_html = toggle_switch.render()
 | RadioGroup      | Renders a group of radio buttons with specified attributes.          |
 
 
-**Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
 
 ### pre_components
 
@@ -220,6 +219,8 @@ toggle_switch_html = toggle_switch.render()
 | ImageZoomComponent      | Renders an image with zoom functionality.               |
 | CarouselComponent       | Renders a carousel with navigation buttons.             |
 | ProgressBarComponent    | Renders a progress bar with animation.               
+**Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
+
 
 ## Author
 
