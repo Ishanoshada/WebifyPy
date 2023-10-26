@@ -1,10 +1,10 @@
 # WebifyPy
 
-WebifyPy is a Python module for generating HTML forms and components. It provides a set of classes to easily create various HTML elements commonly used in web development.
+WebifyPy is a versatile Python module designed to simplify HTML form and component creation. It offers a comprehensive set of classes that enable effortless development of common web elements.
 
 ## Installation
 
-You can install WebifyPy using pip:
+Get started with WebifyPy by installing it via pip:
 
 ```bash
 pip install WebifyPy
@@ -12,7 +12,22 @@ pip install WebifyPy
 
 ## Usage
 
-### Using Forms
+### Components for Easy UI Building
+
+```python
+from WebifyPy.components import Div, Header, Paragraph
+
+# Create a div with a header and a paragraph
+content = Div(
+    content=Header(level=2, text="Welcome to WebifyPy!") +
+             Paragraph(content="WebifyPy is a Python module for generating HTML forms and components.")
+)
+
+# Render the content
+content_html = content.render()
+```
+
+### Streamlined Form Creation
 
 ```python
 from WebifyPy.forms import Form, InputField, SubmitButton
@@ -33,100 +48,60 @@ form.add_field(submit_button)
 form_html = form.render()
 ```
 
-### Using Components
+### Pre-Styled Components for Quick Design
 
 ```python
-from WebifyPy.components import Div, Header, Paragraph
+from WebifyPy.pre_components import AlertComponent, CardComponent
 
-# Create a div with a header and a paragraph
-content = Div(
-    content=Header(level=2, text="Welcome to WebifyPy!") +
-             Paragraph(content="WebifyPy is a Python module for generating HTML forms and components.")
-)
+# Create an alert
+alert = AlertComponent(message="This is a sample alert.", alert_type="success")
 
-# Render the content
-content_html = content.render()
+# Create a card with content
+card = CardComponent(content="This is a sample card.")
+
+# Render the alert and card
+alert_html = alert.render()
+card_html = card.render()
 ```
 
-
-### Creating a Dropdown Menu
+### Style Elements with Ease
 
 ```python
-from WebifyPy.components import Dropdown
+from WebifyPy.styled_components import StyledDiv, StyledButton
 
-# Define options for the dropdown
-options = ["Option 1", "Option 2", "Option 3"]
+# Create a styled div
+styled_div = StyledDiv(content="This is a styled div.")
 
-# Create a dropdown
-dropdown = Dropdown(options=options)
+# Create a styled button
+styled_button = StyledButton(label="Click me")
 
-# Render the dropdown
-dropdown_html = dropdown.render()
+# Render the styled div and button
+styled_div_html = styled_div.render()
+styled_button_html = styled_button.render()
 ```
 
-### Building a Contact Form
+### Interactive JavaScript Components
 
 ```python
-from WebifyPy.forms import Form, InputField, TextArea, SubmitButton
+from WebifyPy.js_components import CounterComponent, ToggleSwitchComponent
 
-# Create a contact form
-contact_form = Form(action="/contact_submit", method="POST")
+# Create a counter component
+counter = CounterComponent()
 
-# Add fields to the form
-name_field = InputField(name="name", type="text", label="Name")
-email_field = InputField(name="email", type="email", label="Email")
-message_field = TextArea(name="message", rows=5, cols=30, label="Message")
-submit_button = SubmitButton(label="Send Message")
+# Create a toggle switch component
+toggle_switch = ToggleSwitchComponent(default_state=True)
 
-contact_form.add_field(name_field)
-contact_form.add_field(email_field)
-contact_form.add_field(message_field)
-contact_form.add_field(submit_button)
-
-# Render the form
-contact_form_html = contact_form.render()
+# Render the counter and toggle switch
+counter_html = counter.render()
+toggle_switch_html = toggle_switch.render()
 ```
 
-### Creating a List of Products
-
-```python
-from WebifyPy.components import List
-
-# Define a list of products
-products = ["Product 1", "Product 2", "Product 3"]
-
-# Create a list component
-product_list = List(items=products)
-
-# Render the list
-product_list_html = product_list.render()
-```
-
-### Making a Table of User Data
-
-```python
-from WebifyPy.components import Table
-
-# Define headers and rows for the table
-headers = ["Name", "Email", "Role"]
-rows = [
-    ["John Doe", "john@example.com", "Admin"],
-    ["Jane Smith", "jane@example.com", "User"],
-    ["Jim Brown", "jim@example.com", "User"]
-]
-
-# Create a table component
-user_table = Table(headers=headers, rows=rows)
-
-# Render the table
-user_table_html = user_table.render()
-```
 
 
 ## Classes Reference
 
 
-### components.py
+### components
 
 | Class Name       | render Description                                              |
 |------------------|---------------------------------------------------------------|
@@ -161,7 +136,7 @@ user_table_html = user_table.render()
 | Article         | Renders an article element with specified content.           |
 | Footer          | Renders a footer element with specified content.             |
 
-### forms.py
+### forms
 
 | Class Name      | render Description                                                           |
 |-----------------|-----------------------------------------------------------------------|
@@ -188,7 +163,67 @@ user_table_html = user_table.render()
 
 **Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
 
+### pre_components
 
+| Class Name         | Description                                            |
+|--------------------|--------------------------------------------------------|
+| PreComponent       | Base class for pre-rendered components.                |
+| AlertComponent     | Renders an alert message with specified content.      |
+| BadgeComponent     | Renders a badge with specified content.               |
+| CardComponent      | Renders a card with specified content.                |
+| ProgressComponent  | Renders a progress bar with specified value.          |
+| ListGroupComponent | Renders a list group with specified items.           |
+| SpinnerComponent   | Renders a loading spinner.                           |
+| ToastComponent     | Renders a toast notification with specified content. |
+| ModalComponent     | Renders a modal dialog with specified content.       |
+| CollapseComponent  | Renders a collapsible content section.               |
+| DropdownComponent  | Renders a dropdown menu with specified options.      |
+| TabComponent       | Renders a tabbed interface.                          |
+| TooltipComponent   | Renders a tooltip with specified text and content.   |
+
+### styled_components
+
+| Class Name          | Description                                             |
+|---------------------|---------------------------------------------------------|
+| StyledComponent     | Base class for styled components.                        |
+| StyledDiv           | Renders a styled div element with specified content.   |
+| StyledButton        | Renders a styled button element with specified label.  |
+| StyledInputField    | Renders a styled input field element with specified attributes. |
+| StyledLink          | Renders a styled anchor element with specified href and text. |
+| StyledParagraph     | Renders a styled paragraph element with specified content.   |
+| StyledHeader        | Renders a styled header element with specified level and text. |
+| StyledSpan          | Renders a styled span element with specified content.         |
+| StyledList          | Renders a styled list element with specified items.           |
+| StyledImage         | Renders a styled image element with specified src and alt.     |
+| StyledForm          | Renders a styled form element with specified action and method. |
+| StyledTextArea      | Renders a styled text area element with specified attributes.   |
+| StyledTable         | Renders a styled table element with specified headers and rows. |
+| StyledSelect        | Renders a styled select element with specified options.        |
+
+### js_components
+
+| Class Name             | Description                                             |
+|------------------------|---------------------------------------------------------|
+| JSComponent            | Base class for JavaScript-based components.            |
+| CounterComponent       | Renders a counter component with increment and decrement buttons. |
+| ToggleSwitchComponent  | Renders a toggle switch component with an on/off state.  |
+| CopyToClipboardComponent| Renders a button to copy content to clipboard.            |
+| ScrollToTopComponent   | Renders a button to scroll to the top of the page.       |
+| DarkModeToggleComponent| Renders a toggle switch for dark mode.                   |
+| HTTPRequestComponent   | Renders a button to send an HTTP request.                |
+| ImageSliderComponent   | Renders an image slider with navigation buttons.         |
+| AccordionComponent     | Renders an accordion with collapsible sections.          |
+| CountdownTimerComponent | Renders a countdown timer to a specified date.          |
+| RandomQuoteComponent    | Renders a random quote from a provided list.             |
+| InteractiveMapComponent | Renders an interactive map with specified coordinates.  |
+| LightboxComponent       | Renders a lightbox gallery for images.                   |
+| ImageZoomComponent      | Renders an image with zoom functionality.               |
+| CarouselComponent       | Renders a carousel with navigation buttons.             |
+| ProgressBarComponent    | Renders a progress bar with animation.               
+
+## Author
+
+[Ishan Oshada](https://github.com/ishanoshada)
 
 ## License
 
