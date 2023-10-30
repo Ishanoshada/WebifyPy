@@ -285,6 +285,62 @@ css_styles.apply(button_component)
 
 
 
+## Usage Examples Components 
+
+### FormComponent
+
+```python
+from WebifyPy.components import FormComponent
+
+# Create a form component
+form_component = FormComponent(action="/submit", method="POST")
+form_html = form_component.render()
+```
+
+### InputField
+
+```python
+from WebifyPy.components import InputField
+
+# Create an input field
+input_field = InputField(name="username", type="text")
+input_html = input_field.render()
+```
+
+### Button
+
+```python
+from WebifyPy.components import Button
+
+# Create a button
+button = Button(label="Submit")
+button_html = button.render()
+```
+
+### TextArea
+
+```python
+from WebifyPy.components import TextArea
+
+# Create a text area
+text_area = TextArea(name="my_text", rows=4, cols=50)
+text_area_html = text_area.render()
+```
+
+### Image
+
+```python
+from WebifyPy.components import Image
+
+# Create an image
+image = Image(src="image.jpg", alt="Sample Image")
+image_html = image.render()
+```
+
+These examples demonstrate how to create instances of different components and generate their corresponding HTML code using the `render` method. You can customize the attributes (like `name`, `type`, `label`, etc.) based on your specific requirements.
+
+
+
 **Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
 
 
