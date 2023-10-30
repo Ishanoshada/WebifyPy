@@ -567,6 +567,8 @@ Please note that these examples demonstrate how to create instances of various c
 | `Bootstrap`     | Represents a specific version of Bootstrap to be used.     |
 
 
+## Example Application's 
+
  I'll provide you with a sample HTML application that incorporates all the components from the `js_components` module. Alongside the code, I'll add comments for documentation purposes.
 
 ```python
