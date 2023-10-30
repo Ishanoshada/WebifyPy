@@ -663,7 +663,101 @@ webifypy_html_path = 'webifypy_components.html'
 After running the script, you will find the generated HTML file (`webifypy_components.html`) in your working directory.
 
 
+## WebifyPy Flask Application Example
 
+This is an example Flask application that demonstrates how to use WebifyPy components for creating login and signup forms.
+
+```Python
+from flask import Flask, render_template, request
+from WebifyPy.pre_components import Form, InputGroup
+from WebifyPy.styled_components import StyledForm, StyledInput, StyledButton as StyledButton, StyledCard, StyledAlert
+
+app = Flask(__name__)
+
+# Set a secret key for sessions
+app.secret_key = 'your_secret_key_here'
+
+
+# Create a login form using WebifyPy components
+login_form = Form(action="/login", method="post")
+login_form.add_field(InputGroup(input_type="text", placeholder="Username"))
+login_form.add_field(InputGroup(input_type="password", placeholder="Password"))
+login_form.add_field(StyledButton(label="Login"))
+
+# Create a signup form using WebifyPy components
+signup_form = Form(action="/signup", method="post")
+signup_form.add_field(InputGroup(input_type="text", placeholder="Username"))
+signup_form.add_field(InputGroup(input_type="password", placeholder="Password"))
+signup_form.add_field(StyledButton(label="Signup"))
+
+# Create a styled login form
+styled_login_form = StyledForm(action="/login", method="post")
+styled_login_form_html = styled_login_form.render()
+
+# Create a styled signup form
+styled_signup_form = StyledForm(action="/signup", method="post")
+styled_signup_form_html = styled_signup_form.render()
+
+print(styled_signup_form_html)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+
+    # Add your login logic here
+    # For example, you can check if the username and password are valid
+
+    return render_template('index.html', login_form=styled_login_form_html)
+
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    username = request.form['username']
+    password = request.form['password']
+
+    # Add your signup logic here
+    # For example, you can create a new user with the provided username and password
+
+    return render_template('index.html', signup_form=styled_signup_form_html)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+
+
+Usage:
+1. Run the application by executing `python app.py` in your terminal.
+2. Access the application at http://localhost:5000.
+
+Routes:
+- `/`: Renders the login and signup forms.
+
+Routes for Form Submission:
+- `/login`: Handles login form submission.
+- `/signup`: Handles signup form submission.
+
+Dependencies:
+- Flask: Make sure to have Flask installed in your Python environment.
+
+WebifyPy Components Used:
+- Form
+- InputGroup
+- StyledForm
+- StyledInput
+- StyledButton
+- StyledCard
+- StyledAlert
+
+Note:
+- This is a basic example and does not include actual user authentication or database interactions. You'll need to implement those based on your specific requirements.
 
 
 **Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
