@@ -340,6 +340,81 @@ image_html = image.render()
 These examples demonstrate how to create instances of different components and generate their corresponding HTML code using the `render` method. You can customize the attributes (like `name`, `type`, `label`, etc.) based on your specific requirements.
 
 
+### Using Forms
+
+#### Form
+The `Form` class allows you to create a form with specified action and method.
+
+```python
+from WebifyPy.forms import Form
+
+# Create a form
+form = Form(action="/submit", method="POST")
+
+# Add fields to the form
+username_field = InputField(name="username", type="text", label="Username")
+password_field = InputField(name="password", type="password", label="Password")
+
+form.add_field(username_field)
+form.add_field(password_field)
+
+# Render the form
+form_html = form.render()
+```
+
+#### InputField
+The `InputField` class generates an input field with specified name and type.
+
+```python
+from WebifyPy.forms import InputField
+
+# Create an input field
+username_field = InputField(name="username", type="text")
+
+# Render the input field
+input_html = username_field.render()
+```
+
+#### TextArea
+The `TextArea` class generates a text area element with specified attributes.
+
+```python
+from WebifyPy.forms import TextArea
+
+# Create a text area
+message_area = TextArea(name="message", rows=5, cols=30, label="Message")
+
+# Render the text area
+textarea_html = message_area.render()
+```
+
+#### Checkbox
+The `Checkbox` class generates an input checkbox element with specified attributes.
+
+```python
+from WebifyPy.forms import Checkbox
+
+# Create a checkbox
+subscribe_checkbox = Checkbox(name="subscribe", value="yes", label="Subscribe to newsletter")
+
+# Render the checkbox
+checkbox_html = subscribe_checkbox.render()
+```
+
+#### Radio
+The `Radio` class generates an input radio button element with specified attributes.
+
+```python
+from WebifyPy.forms import Radio
+
+# Create a radio button
+gender_radio = Radio(name="gender", value="male", label="Male")
+
+# Render the radio button
+radio_html = gender_radio.render()
+```
+
+These examples showcase how to use various form elements provided by the `forms` module in WebifyPy. You can customize these elements further by adjusting their attributes as needed.
 
 **Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
 
