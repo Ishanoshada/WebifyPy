@@ -331,6 +331,73 @@ These examples showcase how to use various form elements provided by the `forms`
 These examples demonstrate how to create instances of the styled components and render them to generate styled HTML elements. You can customize the content and styles according to your specific requirements.
 
 
+## using js_components
+
+### 1. Counter Component:
+
+```python
+from WebifyPy.js_components import CounterComponent
+
+# Create a CounterComponent instance
+counter = CounterComponent()
+
+# Render the component
+counter_html = counter.render()
+```
+
+### 2. Toggle Switch Component:
+
+```python
+from WebifyPy.js_components import ToggleSwitchComponent
+
+# Create a ToggleSwitchComponent instance with default state as True
+toggle_switch = ToggleSwitchComponent(default_state=True)
+
+# Render the component
+toggle_switch_html = toggle_switch.render()
+```
+
+### 3. Tooltip Component:
+
+```python
+from WebifyPy.js_components import TooltipComponent
+
+# Create a TooltipComponent instance
+tooltip = TooltipComponent("Hover over me", "This is a tooltip.")
+
+# Render the component
+tooltip_html = tooltip.render()
+```
+
+### 4. Dropdown Component:
+
+```python
+from WebifyPy.js_components import DropdownComponent
+
+# Define options for the dropdown
+options = ["Option 1", "Option 2", "Option 3"]
+
+# Create a DropdownComponent instance
+dropdown = DropdownComponent(options)
+
+# Render the component
+dropdown_html = dropdown.render()
+```
+
+### 5. Alert Component:
+
+```python
+from WebifyPy.js_components import AlertComponent
+
+# Create an AlertComponent instance with a success message
+alert = AlertComponent("This is a success message", alert_type="success")
+
+# Render the component
+alert_html = alert.render()
+```
+
+Please note that these examples demonstrate how to create instances of various components and render them. You can customize the component parameters and integrate them into your web application as needed.
+
 
 
 ## Classes Reference
