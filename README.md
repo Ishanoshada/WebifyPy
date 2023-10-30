@@ -252,6 +252,86 @@ radio_html = gender_radio.render()
 These examples showcase how to use various form elements provided by the `forms` module in WebifyPy. You can customize these elements further by adjusting their attributes as needed.
 
 
+### Using styled_components 
+
+1. **StyledButton**
+
+   This class creates a styled button.
+
+   ```python
+   from WebifyPy.styled_components import StyledButton
+
+   # Create a StyledButton instance
+   button = StyledButton("Click Me")
+
+   # Render the button
+   button_html = button.render()
+   ```
+
+2. **StyledInput**
+
+   This class creates a styled input field.
+
+   ```python
+   from WebifyPy.styled_components import StyledInput
+
+   # Create a StyledInput instance
+   input_field = StyledInput("Enter your name")
+
+   # Render the input field
+   input_html = input_field.render()
+   ```
+
+3. **StyledCard**
+
+   This class creates a styled card with a title and content.
+
+   ```python
+   from WebifyPy.styled_components import StyledCard
+
+   # Create a StyledCard instance
+   card = StyledCard("Card Title", "Card Content")
+
+   # Render the card
+   card_html = card.render()
+   ```
+
+4. **StyledNavbar**
+
+   This class creates a styled navigation bar with a brand and links.
+
+   ```python
+   from WebifyPy.styled_components import StyledNavbar
+
+   # Define brand and links
+   brand = "My Website"
+   links = [{"url": "#", "text": "Home"}, {"url": "#", "text": "About"}, {"url": "#", "text": "Contact"}]
+
+   # Create a StyledNavbar instance
+   navbar = StyledNavbar(brand, links)
+
+   # Render the navbar
+   navbar_html = navbar.render()
+   ```
+
+5. **StyledAlert**
+
+   This class creates a styled alert with a message and alert type.
+
+   ```python
+   from WebifyPy.styled_components import StyledAlert
+
+   # Create a StyledAlert instance
+   alert = StyledAlert("This is a success message", alert_type="success")
+
+   # Render the alert
+   alert_html = alert.render()
+   ```
+
+These examples demonstrate how to create instances of the styled components and render them to generate styled HTML elements. You can customize the content and styles according to your specific requirements.
+
+
+
 
 ## Classes Reference
 
