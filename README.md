@@ -567,6 +567,103 @@ Please note that these examples demonstrate how to create instances of various c
 | `Bootstrap`     | Represents a specific version of Bootstrap to be used.     |
 
 
+ I'll provide you with a sample HTML application that incorporates all the components from the `js_components` module. Alongside the code, I'll add comments for documentation purposes.
+
+```python
+from WebifyPy.js_components import CounterComponent, ToggleSwitchComponent, TooltipComponent, DropdownComponent, AlertComponent
+
+# Create instances of the components
+counter = CounterComponent()
+toggle_switch = ToggleSwitchComponent()
+tooltip = TooltipComponent("Hover over me", "This is a tooltip.")
+options = ["Option 1", "Option 2", "Option 3"]
+dropdown = DropdownComponent(options)
+alert_success = AlertComponent("This is a success message", alert_type="success")
+alert_error = AlertComponent("This is an error message", alert_type="danger")
+
+# Render the components
+counter_html = counter.render()
+toggle_switch_html = toggle_switch.render()
+tooltip_html = tooltip.render()
+dropdown_html = dropdown.render()
+alert_success_html = alert_success.render()
+alert_error_html = alert_error.render()
+
+# Create the HTML application
+html_application = f'''
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebifyPy Components</title>
+</head>
+<body>
+
+    <!-- Counter Component -->
+    {counter_html}
+
+    <hr>
+
+    <!-- Toggle Switch Component -->
+    {toggle_switch_html}
+
+    <hr>
+
+    <!-- Tooltip Component -->
+    {tooltip_html}
+
+    <hr>
+
+    <!-- Dropdown Component -->
+    {dropdown_html}
+
+    <hr>
+
+    <!-- Alert Components -->
+    {alert_success_html}
+    {alert_error_html}
+
+</body>
+</html>
+'''
+
+# Save the HTML application to a file
+with open('webifypy_components.html', 'w') as f:
+    f.write(html_application)
+
+# Provide the file path for the user
+webifypy_html_path = 'webifypy_components.html'
+```
+
+**Documentation:**
+
+1. **Component Instances:**
+   - `counter`: An instance of the CounterComponent.
+   - `toggle_switch`: An instance of the ToggleSwitchComponent.
+   - `tooltip`: An instance of the TooltipComponent.
+   - `options`: A list of options for the DropdownComponent.
+   - `dropdown`: An instance of the DropdownComponent.
+   - `alert_success`: An instance of the AlertComponent with a success message.
+   - `alert_error`: An instance of the AlertComponent with an error message.
+
+2. **Rendering:**
+   - Each component is rendered using its `render()` method, which generates the HTML code for the component.
+
+3. **HTML Application:**
+   - The rendered components are combined into an HTML document.
+   - Each component is separated by a horizontal rule (`<hr>`) for clarity.
+
+4. **Saving to File:**
+   - The HTML application is saved to a file named `webifypy_components.html`.
+
+5. **File Path:**
+   - The file path (`webifypy_html_path`) where the HTML application is saved is provided to the user.
+
+After running the script, you will find the generated HTML file (`webifypy_components.html`) in your working directory.
+
+
+
+
+
 **Repository Views** ![Views](https://profile-counter.glitch.me/WebifyPy/count.svg)
 
 
